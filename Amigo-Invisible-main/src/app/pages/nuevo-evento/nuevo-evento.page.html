@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear un nuevo evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      {{eventoActual.nombre === '' ? 'Nuevo evento' : eventoActual.nombre}}
+    </ion-card-header>
+    <ion-card-content>
+
+
+      <form (ngSubmit)="guardarForm()" #nuevo="ngForm">
+        <ion-item fill="outline">
+          <ion-label position="floating">Nombre del evento</ion-label>
+          <ion-input [(ngModel)]="eventoActual.nombre" name="nombre" [required]="true"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label>Fecha</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </ion-item>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"  min="{{hoy}}" (ionChange)="cambiarFecha($event)"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+
+    <ion-item fill="outline" *ngFor="let participante of eventoActual.participantes, index as i">
+      <div class="participante">
+
+        <ion-label position="floating">Participante {{i+1}}</ion-label>
+        <ion-input [(ngModel)]="participante.nombre" name="participante{{i}}"></ion-input>
+
+        <ion-icon id="basura" name="trash-bin-outline" (click)="eliminarEspacioParticipante(i)"></ion-icon>
+      </div>
+    </ion-item>
+    <div class="flex-center">
+      <ion-button shape="round" (click)="agregarEspacioParticipante()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="flex-even">
+      <ion-button [fill]="'clear'" (click)="descartar()">Descartar</ion-button>
+      <ion-button [disabled]="nuevo.invalid" type="submit">Guardar</ion-button>
+    </div>
+  </form>
+</ion-card-content>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{evento?.nombre | uppercase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card [ngClass]="{'evento-terminado': evento?.finalizado}">
+    <ion-card-header class="flex-between">
+      <ion-card-title>{{evento?.nombre}}</ion-card-title>
+      <div>
+        <ion-button [fill]="'outline'" (click)="modalBorrar()">
+          <ion-icon id="basura" name="trash-bin-outline"></ion-icon>
+        </ion-button>
+        <ion-button [fill]="'outline'" (click)="modalResortear()">
+          <ion-icon name="repeat-outline"></ion-icon>
+        </ion-button>
+        <ion-button [fill]="'outline'" (click)="modalFinalizar()">
+          <ion-icon name="checkbox-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-card-header>
+    <p></p>
+    <ion-list>
+      <ion-item *ngFor="let persona of evento?.participantes index as i" >
+        <ion-label>{{persona.nombre}}</ion-label>
+        <ion-label>Regala a {{persona.mostrar ? persona.regala : "*******"}}</ion-label>
+        <ion-icon name='{{!persona.mostrar ? "eye-off-outline" : "eye-outline"}}' (click)="!persona.mostrar ? modalMostrar(i) : persona.mostrar=!persona.mostrar"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <div class="flex-even">
+    <ion-button [fill]="'clear'" (click)="atras()">Volver</ion-button>
+  </div>
+</ion-content>

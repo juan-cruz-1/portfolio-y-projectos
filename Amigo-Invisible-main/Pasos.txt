@@ -1,0 +1,4 @@
+Nuevo proyecto
+Instalar almacenamiento
+
+https://ionicframework.com/docs/v3/storage/
