@@ -1,0 +1,85 @@
+body{
+  margin: 0;
+  color: white;
+  font-family: llpixel, monospace;
+  text-align: center;
+}
+
+#zonaJuego{
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.paleta{
+  position: absolute;
+  width: 20px;
+  height: 200px;
+  background-color: white;
+}
+
+.bola{
+  background-color: white;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#tablero{
+  text-align: center;
+  font-size: 5rem;
+}
+
+#paletasContainer :first-child{
+  left: 0;
+}
+
+#paletasContainer :last-child{
+  right: 0;
+}
+
+#mensaje{
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  font-size: 3rem;
+}
+
+#instrucciones{
+  position: absolute;
+  width: 100%;
+  bottom:0;
+  font-size: 1.2rem;
+}
+
+kbd{
+  background-color: rgba(255, 255, 255, 0.312);
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.escondido{
+  opacity: 0;
+}
+
+@font-face {
+  font-family: "llpixel";
+  src: url(./LLPIXEL3.ttf);
+}
+
+.titilar{
+  animation-name: titilar;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes titilar {
+  0%{ opacity: 100%}
+  49.99%{ opacity: 100%}
+  50%{ opacity: 0%}
+  99.99%{ opacity: 0%}
+  
+}
