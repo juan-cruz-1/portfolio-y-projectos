@@ -1,0 +1,126 @@
+ body{
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background:linear-gradient(#89BF9C,#E6E4C6);
+ }
+
+ #pantalla, footer, button{
+	 font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ #container{
+	position: relative;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.038);
+	padding: 5px;
+	margin: auto;
+}
+
+#botonesContainer{
+	width: 400px;
+	aspect-ratio: 1;
+	margin-top: 5px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:5px;
+	grid-template-areas:
+		"ac dividido por menos"
+		"siete ocho nueve mas"
+		"cuatro cinco seis mas"
+		"uno dos tres igual"
+		"c cero punto igual";
+}
+
+#pantalla{
+	font-size: 3rem;
+	text-align: end;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.05);
+	margin: 0;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+#indicadorOperacion{
+	font-size: x-large;
+	position: absolute;
+	left: 30px;
+	top: 10px;
+}
+
+button{
+	color: rgb(0, 0, 0);
+	font-size: larger;
+	background-color: rgba(255, 255, 255, 0.54);
+	border-width: 1px;
+	transition:30ms;
+	border-radius: 2px;
+}
+button:hover{
+	background-color: rgba(255, 255, 255, 0.667);
+}
+
+/* Tipos de botones */
+#cero{
+	grid-area: cero;
+}
+#uno{
+	grid-area: uno;
+}
+#dos{
+	grid-area: dos;
+}
+#tres{
+	grid-area: tres;
+}
+#cuatro{
+	grid-area: cuatro;
+}
+#cinco{
+	grid-area: cinco;
+}
+#seis{
+	grid-area: seis;
+}
+#siete{
+	grid-area: siete;
+}
+#ocho{
+	grid-area: ocho;
+}
+#nueve{
+	grid-area: nueve;
+}
+#mas{
+	grid-area: mas;
+}
+#menos{
+	grid-area: menos;
+}
+#por{
+	grid-area: por;
+}
+#dividido{
+	grid-area: dividido;
+}
+#clear{
+	grid-area: c;
+}
+#allClear{
+	grid-area: ac;
+}
+#igual{
+	grid-area: igual;
+}
+
+footer{
+	background-color: rgba(0, 0, 0, 0.073);
+	width: 100%;
+	text-align: center;
+	margin-top: auto;
+}
